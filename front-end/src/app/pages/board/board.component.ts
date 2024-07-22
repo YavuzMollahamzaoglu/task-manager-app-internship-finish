@@ -6,6 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { TaskItemComponent } from '../task-item/task-item.component';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../../shared/navbar/navbar.component';
 
 interface Task {
   title: string;
@@ -28,6 +29,7 @@ interface Task {
     MatButtonModule,
     TaskItemComponent,
     CommonModule,
+    NavbarComponent,
   ],
 })
 export class BoardComponent implements OnInit {

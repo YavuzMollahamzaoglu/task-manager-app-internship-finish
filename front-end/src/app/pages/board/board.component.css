@@ -7,6 +7,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     background-color: #f9f9f9;
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    left: 50px;
+    z-index: 0;
   }
   
   h2 {
@@ -14,7 +19,7 @@
     margin-bottom: 20px;
   }
   
-  /* Form stil ayarları */
+
   .task-form {
     margin-bottom: 40px;
   }
@@ -24,7 +29,7 @@
     margin-bottom: 16px;
   }
   
-  /* Görev kutuları */
+
   .columns {
     display: flex;
     justify-content: space-between;
@@ -45,7 +50,7 @@
     margin-bottom: 20px;
   }
   
-  /* Görev öğeleri */
+
   .task-item {
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -63,7 +68,7 @@
     margin: 0 0 5px 0;
   }
   
-  /* Durum daireleri */
+
   .status-circle {
     width: 12px;
     height: 12px;
@@ -84,10 +89,25 @@
     background-color: green;
   }
   
-  /* Sil butonu */
+
   button[mat-button] {
     margin-top: 10px;
   }
+button{
+  margin-left: 20px;
+}
   
+.box{
+  margin-left: 20px;
+}
 
-  
+
+body{
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}

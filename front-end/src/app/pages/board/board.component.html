@@ -1,25 +1,25 @@
+<app-navbar></app-navbar>
 <div class="task-board">
-    <h2>Görev Yönetimi</h2>
-  
+    <h2>Kan Panel</h2>
     <form [formGroup]="taskForm" class="task-form">
-      <mat-form-field>
-        <mat-label>Başlık</mat-label>
+      <mat-form-field class="box">
+        <mat-label>Title</mat-label>
         <input matInput formControlName="title">
       </mat-form-field>
-      <mat-form-field>
-        <mat-label>Açıklama</mat-label>
+      <mat-form-field class="box">
+        <mat-label>Description</mat-label>
         <textarea matInput formControlName="description"></textarea>
       </mat-form-field>
-      <mat-form-field>
-        <mat-label>Öncelik</mat-label>
+      <mat-form-field class="box">
+        <mat-label>Priority</mat-label>
         <mat-select formControlName="priority">
-          <mat-option value="Low">Düşük</mat-option>
-          <mat-option value="Medium">Orta</mat-option>
-          <mat-option value="High">Yüksek</mat-option>
+          <mat-option value="Low">Low</mat-option>
+          <mat-option value="Medium">Middle</mat-option>
+          <mat-option value="High">High</mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field>
-        <mat-label>Çalışacak Kişi</mat-label>
+      <mat-form-field class="box">
+        <mat-label>Employee</mat-label>
         <mat-select formControlName="employee">
           <mat-option value="Yavuz Mollahamzaoglu">Yavuz Mollahamzaoğlu</mat-option>
           <mat-option value="Onur Kenis">Onur Keniş</mat-option>
@@ -27,7 +27,8 @@
           <mat-option value="Fatih Toker">Fatih Toker</mat-option>
         </mat-select>
       </mat-form-field>
-      <button mat-raised-button color="primary" (click)="addTask()">Görev Ekle</button>
+      <button mat-raised-button color="primary" (click)="addTask()">Add task</button>
+
     </form>
   
     <div class="columns">
@@ -56,7 +57,7 @@
             [task]="task" 
             (moveTask)="moveTask($event)">
           </app-task-item>
-          <button mat-button color="warn" (click)="clearTask(task)">Sil</button>
+          <button mat-button color="warn" (click)="clearTask(task)">Clear</button>
         </div>
       </div>
     </div>

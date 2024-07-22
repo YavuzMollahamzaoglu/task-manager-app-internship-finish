@@ -1,22 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { BoardComponent } from '../board/board.component';
+import { ListComponent } from '../list/list.component';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [NavbarComponent, BoardComponent],
+  imports: [NavbarComponent, BoardComponent, ListComponent],
   templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.css',
+  styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
-  router!: string;
-  taskData: any;
+  tasks: any[] = [];
 
   ngOnInit() {
-    if (history.state && history.state.task) {
-      this.taskData = history.state.task;
-      console.log('Received task data:', this.taskData);
+    this.loadTasksFromLocalStorage();
+  }
+
+  loadTasksFromLocalStorage(): void {
+    const savedTasks = localStorage.getItem('tasks');
+    if (savedTasks) {
+      this.tasks = JSON.parse(savedTasks);
     }
   }
 }
