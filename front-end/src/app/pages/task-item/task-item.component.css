@@ -1,0 +1,21 @@
+/* Görev öğesinin daireleri */
+.status-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .status-circle.red {
+    background-color: red;
+  }
+  
+  .status-circle.yellow {
+    background-color: yellow;
+  }
+  
+  .status-circle.green {
+    background-color: green;
+  }
+  

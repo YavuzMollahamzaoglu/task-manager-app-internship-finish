@@ -1,0 +1,93 @@
+/* Genel panoya stil vermek için */
+.task-board {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form stil ayarları */
+  .task-form {
+    margin-bottom: 40px;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  /* Görev kutuları */
+  .columns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .column {
+    flex: 1;
+    margin: 0 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .column h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Görev öğeleri */
+  .task-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-item h4 {
+    margin: 0 0 10px 0;
+  }
+  
+  .task-item p {
+    margin: 0 0 5px 0;
+  }
+  
+  /* Durum daireleri */
+  .status-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .status-circle.red {
+    background-color: red;
+  }
+  
+  .status-circle.yellow {
+    background-color: yellow;
+  }
+  
+  .status-circle.green {
+    background-color: green;
+  }
+  
+  /* Sil butonu */
+  button[mat-button] {
+    margin-top: 10px;
+  }
+  
+
+  

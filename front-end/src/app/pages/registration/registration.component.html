@@ -1,0 +1,55 @@
+<form class="row g-3 needs-validation" [formGroup]="userForm">
+  <div class="col-md-4">
+    <label class="form-label">First name</label>
+    <input type="text" class="form-control" formControlName="firstName">
+    <div class="text-danger" *ngIf="userForm.controls['firstName'].invalid && (isFormSubmitted || userForm.controls['firstName'].touched || userForm.controls['firstName'].dirty)">
+      <span *ngIf="userForm.controls['firstName'].errors?.['required']">This Is Required</span>
+      <span *ngIf="userForm.controls['firstName'].errors?.['minlength']">Min 4 characters required</span>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Last name</label>
+    <input type="text" class="form-control" formControlName="lastName">
+    <div class="text-danger" *ngIf="userForm.controls['lastName'].invalid && (userForm.controls['lastName'].touched || userForm.controls['lastName'].dirty)">
+      <span *ngIf="userForm.controls['lastName'].errors?.['required']">This Is Required</span>
+      <span *ngIf="userForm.controls['lastName'].errors?.['minlength']">Min 4 characters required</span>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control" formControlName="email">
+    <div class="text-danger" *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].touched || userForm.controls['email'].dirty)">
+      <span *ngIf="userForm.controls['email'].errors?.['required']">This is required</span>
+      <span *ngIf="userForm.controls['email'].errors?.['email']">Invalid email format</span>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">New password</label>
+    <input type="password" class="form-control" formControlName="password">
+    <div class="text-danger" *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].touched || userForm.controls['password'].dirty)">
+      <span *ngIf="userForm.controls['password'].errors?.['required']">This is required</span>
+      <span *ngIf="userForm.controls['password'].errors?.['minlength']">Min 6 characters required</span>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" formControlName="isAgree">
+      <label class="form-check-label">Agree to terms and conditions</label>
+    </div>
+    <div class="text-danger" *ngIf="isFormSubmitted && userForm.controls['isAgree'].invalid">
+      You must agree to the terms
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button class="btn btn-primary" type="button" (click)="onSubmit()">Submit form</button>
+  </div>
+</form>
+
+<div *ngIf="isUserCreated" class="alert alert-success" role="alert">
+  User created successfully!
+</div>

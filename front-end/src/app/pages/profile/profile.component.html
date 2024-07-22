@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<app-profile-alert [error]="error" *ngIf="error" (close)="error = null;"></app-profile-alert>
+
+  <mat-form-field>
+    <div>
+        <i class="bi bi-people"></i>
+        <mat-label> Add people that you work with</mat-label>
+        <textarea matInput></textarea>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field>
+    <div>
+        <i class="bi bi-buildings"></i>
+        <mat-label>Add where you work at</mat-label>
+        <textarea matInput></textarea>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field>
+    <div>
+        <i class="bi bi-briefcase-fill"></i>
+        <mat-label>Add your professional title </mat-label>
+        <textarea> </textarea>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field>
+    <div>
+        <i class="bi bi-person-circle"></i>
+        <mat-label>Add Username </mat-label>
+        <textarea matInput></textarea>
+    </div>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <div>
+        <i class="bi bi-geo-alt-fill"></i>
+        <mat-label>Add your location </mat-label>
+        <textarea matInput></textarea>
+    </div>
+  </mat-form-field>
+  
+
+  <mat-form-field>
+    <div>
+        <i class="bi bi-phone-fill"></i>
+        <mat-label>Add your phone number</mat-label>
+        <textarea matInput></textarea>
+    </div>
+  </mat-form-field>
+
+<button (click)="saveChanges()">Save the changes</button>

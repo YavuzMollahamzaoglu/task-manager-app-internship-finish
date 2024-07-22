@@ -1,0 +1,64 @@
+<div class="task-board">
+    <h2>Görev Yönetimi</h2>
+  
+    <form [formGroup]="taskForm" class="task-form">
+      <mat-form-field>
+        <mat-label>Başlık</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Açıklama</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Öncelik</mat-label>
+        <mat-select formControlName="priority">
+          <mat-option value="Low">Düşük</mat-option>
+          <mat-option value="Medium">Orta</mat-option>
+          <mat-option value="High">Yüksek</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Çalışacak Kişi</mat-label>
+        <mat-select formControlName="employee">
+          <mat-option value="Yavuz Mollahamzaoglu">Yavuz Mollahamzaoğlu</mat-option>
+          <mat-option value="Onur Kenis">Onur Keniş</mat-option>
+          <mat-option value="Baris Hantas">Barış Hantaş</mat-option>
+          <mat-option value="Fatih Toker">Fatih Toker</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addTask()">Görev Ekle</button>
+    </form>
+  
+    <div class="columns">
+      <div class="column">
+        <h3>To Do</h3>
+        <div *ngFor="let task of tasks.toDo" class="task-item">
+          <app-task-item 
+            [task]="task" 
+            (moveTask)="moveTask($event)">
+          </app-task-item>
+        </div>
+      </div>
+      <div class="column">
+        <h3>In Progress</h3>
+        <div *ngFor="let task of tasks.inProgress" class="task-item">
+          <app-task-item 
+            [task]="task" 
+            (moveTask)="moveTask($event)">
+          </app-task-item>
+        </div>
+      </div>
+      <div class="column">
+        <h3>Done</h3>
+        <div *ngFor="let task of tasks.done" class="task-item">
+          <app-task-item 
+            [task]="task" 
+            (moveTask)="moveTask($event)">
+          </app-task-item>
+          <button mat-button color="warn" (click)="clearTask(task)">Sil</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

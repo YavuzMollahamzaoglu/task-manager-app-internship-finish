@@ -1,0 +1,18 @@
+<app-profile-alert [error]="error" *ngIf="error" (close)="error = null;"></app-profile-alert>
+<h2>Login</h2>
+
+<form (ngSubmit)="onLogin()">
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" [(ngModel)]="loginObj.email" required>
+
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" [(ngModel)]="loginObj.password" required>
+
+  <button type="submit">Login</button>
+</form>
+
+<button>
+  <a routerLink="/registration" routerLinkActive="active">Create a new account!</a>
+</button>
+
+<router-outlet></router-outlet>
