@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2 style="margin-left: 250px;">Create Team</h2>
+ 
+  <div class="form">
+    <form (ngSubmit)="createTeam()">
+      <mat-form-field style="margin-right: 10px; margin-left: 250px;" appearance="fill">
+        <mat-label>Team Name</mat-label>
+        <input matInput [(ngModel)]="teamName" name="teamName" required>
+      </mat-form-field>
+
+      <mat-form-field style="margin-right: 10px;" appearance="fill">
+        <mat-label>Employees</mat-label>
+        <mat-select [(ngModel)]="selectedEmployees" name="selectedEmployees" multiple required>
+          <mat-option *ngFor="let employee of employees" [value]="employee">
+            {{employee}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <button class="create-button"  type="submit">Create Team</button>
+    </form>
+  </div>
+<app-team-list></app-team-list>
+</div>

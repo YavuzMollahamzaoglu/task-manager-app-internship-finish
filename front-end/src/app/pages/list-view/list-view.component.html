@@ -1,0 +1,35 @@
+<button class="create-button" mat-raised-button color="primary" (click)="openCreateTaskDialog()">Create Task</button>
+
+<div class="task-container">
+  <div *ngFor="let task of tasks" class="task-item">
+    <div class="task-section">
+      <strong>Title:</strong>
+      <div>{{ task.title }}</div>
+    </div>
+    <div class="task-section">
+      <strong>Summary:</strong>
+      <div>{{ task.summary }}</div>
+    </div>
+    <div class="task-section">
+      <strong>Assigned To:</strong>
+      <div>{{ task.assignedTo }}</div>
+    </div>
+    <div class="task-section">
+      <strong>Due Date:</strong>
+      <div>{{ task.dueDate | date }}</div>
+    </div>
+    <div class="task-section">
+      <strong>Status:</strong>
+      <div class="status-indicator" [ngClass]="{
+        'status-waitList': task.status === 'Wait list',
+        'status-inProgress': task.status === 'In Progress',
+        'status-done': task.status === 'done'
+      }"></div>
+      <div>{{ task.status }}</div>
+    </div>
+    <div class="task-actions">
+      <button class="update-button" (click)="updateTaskStatus(task, 'In Progress')">In progress</button>
+      <button class="delete-button" (click)="deleteTask(task)">Delete</button>
+    </div>
+  </div>
+</div>

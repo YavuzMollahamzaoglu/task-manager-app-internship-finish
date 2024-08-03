@@ -1,15 +1,22 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
-import { Routes } from '@angular/router';
 import { routes } from '../app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AuthInterceptor } from '../auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    importProvidersFrom(HttpClientModule),
     provideRouter(routes),
-    provideClientHydration(), provideAnimationsAsync(),
+    provideClientHydration(),
+    provideAnimationsAsync(),
+    AuthInterceptor,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
   ],
 };

@@ -3,8 +3,8 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
+    display: flex;
+    margin-left: 300px;
   }
   
   .status-circle.red {
@@ -19,3 +19,36 @@
     background-color: green;
   }
   
+  .todo{
+    border-width: 2px;
+    border-color: lightblue;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #88D66C;
+    display: flex;
+  }
+
+  .inprogress{
+    border-width: 2px;
+    border-color: lightblue;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #F3FEB8;
+    display: flex;
+  }
+
+  .done{
+    border-width: 2px;
+    border-color: lightblue;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #FF6347;
+    display: flex;
+  }
+
+  .button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }

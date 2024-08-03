@@ -7,11 +7,27 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { Router, NavigationExtras } from '@angular/router';
+import { SuccessDialogComponent } from '../../shared/user-created-dialog/user-created-dialog.component';
 
 @Component({
   selector: 'app-registration',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, HttpClientModule],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDialogModule,
+  ],
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css'],
 })
@@ -20,7 +36,11 @@ export class RegistrationComponent {
   isFormSubmitted: boolean = false;
   isUserCreated: boolean = false;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private dialog: MatDialog,
+    private router: Router
+  ) {
     this.userForm = new FormGroup({
       firstName: new FormControl('', [
         Validators.required,
@@ -48,6 +68,7 @@ export class RegistrationComponent {
           next: (res) => {
             console.log('User registered successfully', res);
             this.isUserCreated = true;
+            this.openDialog();
           },
           error: (err) => {
             console.error('Error while registering user', err);
@@ -55,5 +76,18 @@ export class RegistrationComponent {
           },
         });
     }
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(SuccessDialogComponent, {
+      width: '250px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      const navigationExtras: NavigationExtras = {
+        state: { email: this.userForm.value.email },
+      };
+      this.router.navigate(['/login'], navigationExtras);
+    });
   }
 }

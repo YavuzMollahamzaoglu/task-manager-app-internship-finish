@@ -1,0 +1,60 @@
+/* src/app/create-task-dialog/create-task-dialog.component.css */
+
+/* Dialog başlığının stilini ayarlayın */
+h2.mat-dialog-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Form alanları arasında boşluk */
+  mat-form-field {
+    margin-top: 5px;
+    margin-left: 45px;
+    width: 70%;
+    margin-bottom: 16px;
+    align-items: center;
+  }
+  
+  /* Form alanlarını hizalamak için düzenleme */
+  mat-form-field mat-label {
+    font-size: 1rem;
+  }
+  
+  /* Formun ve düğmelerin hizalanması */
+  mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+
+  .dialog{
+    
+  }
+
+  .add-button{
+    border-width: 2px;
+    border-color: lightblue;
+    border-radius: 10px;
+    box-shadow: 2px 2px gray;
+    padding: 3px;
+    background-color: #87CEFA;
+    font-weight: bold;
+    margin-left:85px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+
+  .cancel-button{ border-width: 2px;
+    border-color: lightblue;
+    border-radius: 10px;
+    box-shadow: 2px 2px gray;
+    padding: 3px;
+    background-color: #FF6347;
+    font-weight: bold;
+    
+  }

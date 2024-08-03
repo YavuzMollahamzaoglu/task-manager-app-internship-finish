@@ -1,10 +1,13 @@
 <div class="task-item">
-  <h4>{{ task.title }}</h4>
-  <p>{{ task.description }}</p>
+  <div class="status-circle" [ngClass]="getStatusClass(task.status)"></div>
+  <h4>Title: {{ task.title }}</h4>
+  <p><strong>Description:</strong> {{ task.description }}</p>
   <p><strong>Priority</strong> {{ task.priority }}</p>
   <p><strong>Employee</strong> {{ task.employee }}</p>
-  <div class="status-circle" [ngClass]="getStatusClass(task.status)"></div>
-  <button mat-button (click)="moveTaskStatus('toDo')">To Do</button>
-  <button mat-button (click)="moveTaskStatus('inProgress')">In Progress</button>
-  <button mat-button (click)="moveTaskStatus('done')">Done</button>
+
+  <div class="button-container">
+    <button class="todo" mat-button (click)="moveTaskStatus('toDo')">To Do</button>
+    <button class="inprogress" mat-button (click)="moveTaskStatus('inProgress')">In progress</button>
+    <button class="done" mat-button (click)="moveTaskStatus('done')">Done</button>
+  </div>
 </div>

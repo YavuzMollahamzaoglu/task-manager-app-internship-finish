@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+    max-width: 600px; 
+    margin: 0 auto;
+    padding: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    background-color: #f9f9f9; 
+    justify-content: center;  
+  }
+  
+  mat-form-field {
+  width: 100%;
+}
+
+mat-form-field div {
+  display: flex;
+  align-items: center;
+}
+
+mat-form-field i {
+  margin-right: 8px; 
+  font-size: 20px; 
+}
+
+#container{
+    position: absolute;
+    top:120px;
+    right: 670px;
+    width: 500px;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .textarea{ 
+    position: absolute;
+    right: 20px;
+}
+
+.label{
+    margin-left: 10px;
+}
+
+button{
+    border-width: 2px;
+    border-color: lightblue;
+    border-radius: 10px;
+    box-shadow: 2px 2px gray;
+    padding: 7px;
+    left:1400px;
+    background-color: #87CEFA;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+
+  

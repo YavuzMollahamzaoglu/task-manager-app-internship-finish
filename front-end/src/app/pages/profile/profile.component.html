@@ -1,53 +1,45 @@
-<app-navbar></app-navbar>
-<app-profile-alert [error]="error" *ngIf="error" (close)="error = null;"></app-profile-alert>
-
-  <mat-form-field>
-    <div>
+<div class="big-container">
+    <app-navbar></app-navbar>
+    
+    <div class="container" id="container" [formGroup]="profileForm">
+  
+      <div class="input">
         <i class="bi bi-people"></i>
-        <mat-label> Add people that you work with</mat-label>
-        <textarea matInput></textarea>
-    </div>
-  </mat-form-field>
-
-  <mat-form-field>
-    <div>
+        <mat-label class="label">Add people that you work with</mat-label>
+        <textarea class="textarea" matInput formControlName="colleague"></textarea>
+      </div>
+  
+      <div class="input">
         <i class="bi bi-buildings"></i>
-        <mat-label>Add where you work at</mat-label>
-        <textarea matInput></textarea>
-    </div>
-  </mat-form-field>
-
-  <mat-form-field>
-    <div>
+        <mat-label class="label">Add where you work at</mat-label>
+        <textarea class="textarea" matInput formControlName="workLocation"></textarea>
+      </div>
+  
+      <div class="input">
         <i class="bi bi-briefcase-fill"></i>
-        <mat-label>Add your professional title </mat-label>
-        <textarea> </textarea>
-    </div>
-  </mat-form-field>
-
-  <mat-form-field>
-    <div>
+        <mat-label class="label">Add your professional title</mat-label>
+        <textarea class="textarea" formControlName="workTitle"></textarea>
+      </div>
+  
+      <div class="input">
         <i class="bi bi-person-circle"></i>
-        <mat-label>Add Username </mat-label>
-        <textarea matInput></textarea>
-    </div>
-  </mat-form-field>
+        <mat-label class="label">Add Username</mat-label>
+        <textarea class="textarea" matInput formControlName="userName"></textarea>
+      </div>
   
-  <mat-form-field>
-    <div>
+      <div class="input">
         <i class="bi bi-geo-alt-fill"></i>
-        <mat-label>Add your location </mat-label>
-        <textarea matInput></textarea>
-    </div>
-  </mat-form-field>
+        <mat-label class="label">Add your location</mat-label>
+        <textarea class="textarea" matInput formControlName="location"></textarea>
+      </div>
   
-
-  <mat-form-field>
-    <div>
+      <div class="input">
         <i class="bi bi-phone-fill"></i>
-        <mat-label>Add your phone number</mat-label>
-        <textarea matInput></textarea>
+        <mat-label class="label">Add your phone number</mat-label>
+        <textarea class="textarea" matInput formControlName="phoneNumber"></textarea>
+      </div>
+  
+      <button (click)="saveChanges()">Save the changes</button>
     </div>
-  </mat-form-field>
-
-<button (click)="saveChanges()">Save the changes</button>
+  </div>
+  

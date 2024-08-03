@@ -8,10 +8,8 @@ body{
   align-items: center; 
 }
 
-.board{
+.list-view{
   position: absolute;
+  right: 400px;
   top: 100px;
-  right: 50px;
-  left: 50px;
-  z-index: -1;
 }

@@ -1,0 +1,29 @@
+<div class="team-container">
+  <div *ngFor="let team of teams; let teamIndex = index" class="team">
+    <div class="team-header">
+      <h2>{{ team.name }}</h2>
+      <div class="team-buttons">
+        <button class="toggle-button" (click)="toggleTeamDetails(teamIndex)">
+          {{ team.showDetails ? 'Hide Details' : 'Show Details' }}
+        </button>
+        <button class="delete-button" (click)="removeTeam(teamIndex)">Delete</button>
+      </div>
+    </div>
+    <div *ngIf="team.showDetails" class="team-details">
+      <div class="employee-list">
+        <div *ngFor="let employee of team.employees; let i = index" class="employee-item">
+          <span>{{ employee }}</span>
+          <div class="status-container">
+            <span class="status-indicator" [ngClass]="getStatusClass(team.statuses[i])"></span>
+            <mat-select class="select" [(ngModel)]="team.statuses[i]" (selectionChange)="changeStatus(teamIndex, i, $event.value)">
+              <mat-option value="online">Online</mat-option>
+              <mat-option value="offline">Offline</mat-option>
+              <mat-option value="away">Away</mat-option>
+            </mat-select>
+          </div>
+        </div>
+      </div>
+      <button class="add-employee-button" (click)="addEmployee(teamIndex)">Add Employee</button>
+    </div>
+  </div>
+</div>

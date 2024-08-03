@@ -25,9 +25,12 @@
           <mat-option value="Onur Kenis">Onur Keniş</mat-option>
           <mat-option value="Baris Hantas">Barış Hantaş</mat-option>
           <mat-option value="Fatih Toker">Fatih Toker</mat-option>
+          <mat-option value="Fatih Toker">Cihat Haktanir</mat-option>
         </mat-select>
       </mat-form-field>
-      <button mat-raised-button color="primary" (click)="addTask()">Add task</button>
+      <button  class="add-button" (click)="addTask()">Add task</button>
+
+    
 
     </form>
   
@@ -57,7 +60,7 @@
             [task]="task" 
             (moveTask)="moveTask($event)">
           </app-task-item>
-          <button mat-button color="warn" (click)="clearTask(task)">Clear</button>
+          <button class="clear-button" (click)="clearTask(task)">Delete</button>
         </div>
       </div>
     </div>

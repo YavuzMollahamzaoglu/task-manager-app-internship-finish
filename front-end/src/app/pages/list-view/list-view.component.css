@@ -1,0 +1,76 @@
+.task-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 1200px;
+    margin-left: 20px;
+  }
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .task-section {
+    flex: 1;
+    margin: 0 0.5rem;
+    width: 200px;
+  }
+  
+  .status-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+  
+  .status-waitList {
+    background-color: red;
+  }
+  
+  .status-inProgress {
+    background-color: yellow;
+  }
+
+  
+  .task-actions button {
+    margin: 0 0.5rem;
+  }
+
+.create-button{
+  position: relative;
+  top: 30px;
+  border-width: 2px;
+  border-color: lightblue;
+  border-radius: 10px;
+  box-shadow: 2px 2px gray;
+  padding: 7px;
+  left:1400px;
+  background-color: #87CEFA;
+  font-weight: bold;
+}
+
+.update-button{
+  border-width: 2px;
+  border-color: lightblue;
+  border-radius: 10px;
+  box-shadow: 2px 2px gray;
+  padding: 3px;
+  background-color: #FFFFCC;
+  font-weight: bold;
+}
+
+.delete-button{
+  border-width: 2px;
+  border-color: lightblue;
+  border-radius: 10px;
+  box-shadow: 2px 2px gray;
+  padding: 3px;
+  background-color: #FF6347;
+  font-weight: bold;
+}

@@ -4,36 +4,58 @@
     <div id="sidebar">
         <div id="side-menu">
             <a routerLink="/board" routerLinkActive="active">Kan Panel</a>
-            <a routerLink="" routerLinkActive="active">Projects</a>
-            <a routerLink="/teams" routerLinkActive="active">Teams</a>
-            <i class="bi bi-instagram"></i>
-            <i class="bi bi-twitter-x"></i>
-            <i class="bi bi-facebook"></i>
+            <a routerLink="/main" routerLinkActive="active">List View</a>
+            <a routerLink="/team" routerLinkActive="active">Teams</a>
+            
             <div>
-                <p>For more information;</p>
-                <i class="bi bi-info-circle"></i>
+                <div class="social-media">
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-twitter-x"></i>
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-info-circle"></i>   
+                </div>
+                <p class="footer">All rights reserved 2024</p>
             </div>
-         </div>
+        </div>
     </div>
     <div id="content">
         <div id="header">
             <div id="logo">
-                <i id="icon" class="bi bi-grid-3x3-gap" (click)="sidebarActive = !sidebarActive"></i>
+                <i style="color: black;" id="icon" class="bi bi-list" (click)="sidebarActive = !sidebarActive"></i>
                 <img src="https://scalebranding.com/wp-content/uploads/2021/12/punch-fight.jpg" style="width: 40px; height: 40px;">
-                Punctual
+                Punctual 
                 <div id="menu" class="logo-menu">
                     <a routerLink="/main" routerLinkActive="active">Home</a>
-                    <a routerLink="/login" routerLinkActive="active">Tasks</a>
-                    <a routerLink="/create-task" routerLinkActive="active">Create new task</a>
+                    <a routerLink="/info" routerLinkActive="active">Info</a>
                 </div>
             </div>
-            <div id="menu">        
-                <a routerLink="/settings"><i class="bi bi-gear"></i></a>
-                <a routerLink="/notification"><i class="bi bi-bell"></i></a>
-                <a routerLink="/profile" class="profile"><img src="https://as2.ftcdn.net/v2/jpg/05/89/93/27/1000_F_589932782_vQAEAZhHnq1QCGu5ikwrYaQD0Mmurm0N.jpg" style="width: 30px;"></a>
+            <div id="gear-menu">
+                <button class="settings-button" mat-button [matMenuTriggerFor]="settingsMenu">
+                    <i class="bi bi-gear"></i>
+                </button>
+                <mat-menu #settingsMenu="matMenu">
+                    <button mat-menu-item>Privacy settings</button>
+                    <button mat-menu-item>Help</button>
+                    <button mat-menu-item>System</button>
+                    <button mat-menu-item>Applications</button>
+                </mat-menu>
+                
+                <button class="notification-button" mat-button [matMenuTriggerFor]="notificationMenu">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <mat-menu #notificationMenu="matMenu">
+                    <button mat-menu-item>User Notifications</button>
+                    <button mat-menu-item>System Notifications</button>
+                </mat-menu>
+                
+                <button class="profile-button" mat-button [matMenuTriggerFor]="profileMenu">
+                    <img src="https://as2.ftcdn.net/v2/jpg/05/89/93/27/1000_F_589932782_vQAEAZhHnq1QCGu5ikwrYaQD0Mmurm0N.jpg" style="width: 30px;">
+                </button>
+                <mat-menu #profileMenu="matMenu">
+                    <button routerLink="/profile" mat-menu-item>Profile</button>
+                    <button routerLink="/logout" mat-menu-item>Logout</button>
+                </mat-menu>
             </div>
         </div>
     </div>
 </div>
-
-
